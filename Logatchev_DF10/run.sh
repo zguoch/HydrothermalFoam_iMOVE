@@ -7,8 +7,14 @@ cd ${0%/*} || exit 1    # Run from this directory
 application=`getApplication`
 
 ./clean.sh
-# 1. meshing
-./meshing_par.sh
+# 1. meshing using gmsh
+gmsh gmsh/Logatchev.geo -3 -o gmsh/Logatchev.msh -format msh22
+
+# 2.convert gmsh (.msh file) to openfoam format (polyMesh)
+gmshToFoam gmsh/Logatchev.msh
+
+# 3..change front and back patches as empty to form a 2D mesh
+changeDictionary
 
 # 4. set permeability
 runApplication setFields

@@ -31,37 +31,6 @@ regions
             volScalarFieldValue permeability 5e-15
         );
     }
-
-    // surfaceToCell
-    // {
-    //     file "constant/triSurface/TAG_detachment.stl";
-    //     outsidePoints ((-5000 -4000 -1.5)); // definition of outside
-    //     includeCut true; // cells cut by surface
-    //     includeInside yes; // cells not on outside of surf
-    //     includeOutside no; // cells on outside of surf
-    //     nearDistance -1; // cells with centre near surf
-    //     curvature 0.9; // cells within nearDistance
-
-    //     fieldValues
-    //     (
-    //         volScalarFieldValue permeability 5e-15
-    //     ); 
-    // }
-    // surfaceToCell
-    // {
-    //     file "constant/triSurface/TAG_pipe.stl";
-    //     outsidePoints ((-5000 -4500 -1.5)); // definition of outside
-    //     includeCut true; // cells cut by surface
-    //     includeInside yes; // cells not on outside of surf
-    //     includeOutside no; // cells on outside of surf
-    //     nearDistance -1; // cells with centre near surf
-    //     curvature 0.9; // cells within nearDistance
-
-    //     fieldValues
-    //     (
-    //         volScalarFieldValue permeability 1e-14
-    //     ); 
-    // }
 );
 
 // ************************************************************************* //
