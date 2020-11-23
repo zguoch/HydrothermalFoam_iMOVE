@@ -19,6 +19,5 @@ Here we share a case study of Logatchev-1 hydrothermal system.
 
 <img src="./images/Temperature.jpeg" alt="mesh"  width="400"/>
 
-<video width="400" height="420" controls>
-  <source src="./images/streamlines_recirculation.mp4" type="video/mp4">
-</video>
+<img src="./images/streamlines_recirculation.gif" alt="mesh"  width="400"/>
+
