@@ -1,0 +1,70 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  6                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// create new cellZone and faceZone
+actions
+(
+    // faceSet
+    {
+        action  new;
+        name    internalfaces;
+        type    faceSet;
+
+        source  boxToFace;
+        sourceInfo
+        {
+            box (1000 -3000 0) (2000 -700 100);
+        }
+    }
+    // faceZone 
+    {
+        action  new;
+        name    internalfacepatch;
+        type    faceZoneSet;
+
+        source  setToFaceZone;
+        sourceInfo
+        {
+            faceSet internalfaces;
+        }
+    }
+
+    // {
+    //     action  new;
+    //     name    internalcells;
+    //     type    cellSet;
+
+    //     source  boxToCell;
+    //     sourceInfo
+    //     {
+    //         box (-1 -1 0.096) (1 1 0.1);	//we need to capture a cell center
+    //     }
+    // }
+
+    // {
+    //     action  new;
+    //     name    internalcells;
+    //     type    cellZoneSet;
+
+    //     source  setToCellZone;
+    //     sourceInfo
+    //     {
+    //         set internalcells;
+    //     }
+    // }
+
+);
+
+// ************************************************************************* //
