@@ -16,15 +16,14 @@ FoamFile
 
 boundary
 {
-    detachment_slave
+    front
     {
         type            empty;
     }
-    detachment
+    back
     {
         type            empty;
     }
-    defaultFaces{ type empty;}
 }
 
 
